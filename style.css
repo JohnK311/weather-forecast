@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html, body {
+    font-family: serif;
+    height: 100%;
+}
+body {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    background-color: #ececec;
+}
+
+.weatherBlock{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weather{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 822px;
+    height: 172px;
+    background-color: #5e954e;
+    margin: 25px 0;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    color: white;
+}
+
+.weatherInsideBlock_one,
+.weatherInsideBlock_two, 
+.weatherInsideBlock_three{
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+
+section{
+    padding: 0 30px;
+    text-align: left;
+    
+}
+
+.cityName{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.temp,
+.weatherInsideBlock_two, 
+.weatherInsideBlock_three{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#city{
+    width: 100px;
+}
