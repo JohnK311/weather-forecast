@@ -5,39 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="main">
+    <div class="wrapper">
+        <div class="mainContent">
+            <div class="mainSelect">
+                <form action="" class="formStyle">
+                    <input class="cityInputStyle" type="text" id="city" value="" placeholder="Find city">
+                    <button class="cityBtn">Show</button>
+                </form>
+            </div>
+            <div class="weatherMainContainer">
 
-        <div class="mainSelect">
-            <select id="city"><select>
-        </div>
-
-        <div class="weatherBlock">
-            <div class="weather">
-                <div class="weatherInsideBlock_one">
+                <div class="mainWeather">
                     <section class="cityName"></section>
+                    <section class="weatherPicture">
+                    </section>
                     <section class="temp"></section>
+                    <section class="weatherStatus"><span></span></section>
                 </div>
+                <div class="otherBlock">
+                    <div class="statsMainBlock">
+                        <section class="wind statsStyle">
+                            <div class="statTtl">
+                                Wind
+                            </div>
+                            <div class="windStatCount">
 
-                <div class="weatherInsideBlock_two">
-                    <section class="wind"></section>
-                    <section class="humidity"></section>
-                    <section class="pressure"></section>
+                            </div>
+                        </section>
+                        <section class="humidity statsStyle">
+                            <div class="statTtl">
+                                Humidity
+                            </div>
+                            <div class="humidityStatCount">
+                            </div>
+                        </section>
+                        <section class="visibility statsStyle">
+                            <div class="statTtl">
+                                Visibility
+                            </div>
+                            <div class="visibilityStatCount">
+                            </div>
+                        </section>
+                        <section class="pressure statsStyle">
+                            <div class="statTtl">
+                                Pressure
+                            </div>
+                            <div class="pressureStatCount">
+
+                            </div>
+                        </section>
+                    </div>
+
                 </div>
-
-                <div class="weatherInsideBlock_three">
-                    <section class="visibility"></section>
-                </div>
-
             </div>
         </div>
     </div>
-
-
 </body>
 <script src="script.js"></script>
 

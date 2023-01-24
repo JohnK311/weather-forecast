@@ -1,76 +1,460 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
-
-
+*,
 ::before,
 ::after {
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-    font-family: serif;
+body,
+html {
+    background-color: #2C3D55;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
     height: 100%;
-}
-body {
-    margin: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    
-}
-
-.main{
-    display: flex;
-    flex-direction: column;
-    width: 1000px;
-    background-color: #ececec;
-}
-
-.weatherBlock{
-    display: flex;
     align-items: center;
-    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
 }
 
-.weather{
+.mainContent {
+    width: 100%;
+    background-color: #3E4C5E;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mainSelect {
+    width: 100%;
+}
+
+.formStyle {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 822px;
-    height: 172px;
-    background-color: #5e954e;
-    margin: 25px 0;
-    border-radius: 10px;
-    font-family: 'Roboto';
-    color: white;
+    gap: 20px;
 }
 
-.weatherInsideBlock_one,
-.weatherInsideBlock_two, 
-.weatherInsideBlock_three{
-    width: 250px;
+.cityInputStyle {
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.cityBtn {
+    outline: none;
+    border: none;
+    background-color: #2980B9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.weatherMainContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.mainWeather {
+    background-color: #2C3D55;
+    border-radius: 5px;
+    padding: 20px;
+    color: #fff;
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
-    
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-section{
-    padding: 0 30px;
-    text-align: left;
-    
+.cityName {
+    font-size: 24px;
+    opacity: .8;
 }
 
-.cityName{
-    font-size: 40px;
-    font-weight: 400;
+.temp {
+    font-size: 24px;
 }
 
-.temp,
-.weatherInsideBlock_two, 
-.weatherInsideBlock_three{
-    font-size: 18px;
-    font-weight: 300;
+span{
+    text-align: center;
 }
 
-#city{
+.temp span {
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.dnMaxTemp {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.dayMaxTemp,
+.nightMinTemp{
+    font-size: 14px;
+}
+
+.dayMaxTemp span,
+.nightMinTemp span{
+    font-size: 20px;
+}
+
+.weatherStatus {
+    font-size: 20px;
+    /* opacity: .8; */
     width: 100px;
+    height: 100px;
+}
+
+.todayData {
+    font-size: 14px;
+    opacity: .8;
+}
+
+.otherBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 20px; */
+    height: 100%;
+}
+
+.statsMainBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    color: #fff;
+}
+
+.statsStyle {
+    background-color: #2C3D55;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.statTtl {
+    opacity: .6;
+    font-size: 18px;
+}
+
+.statCount {
+    font-size: 20px;
+}
+
+.windStatCount span,
+.humidityStatCount span,
+.visibilityStatCount span,
+.pressureStatCount span {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.daysMainBlock {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.otherDay {
+    background-color: #2C3D55;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dayDate {
+    font-size: 14px;
+    opacity: .6;
+}
+
+@media (min-width: 200px) and (max-width: 389px) {
+    .wrapper {
+        width: 100%;
+        height: auto;
+        padding: 30px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainContent {
+        padding: 15px;
+    }
+
+    .formStyle {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .weatherMainContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .statsMainBlock {
+        gap: 10px;
+    }
+
+    .statCount {
+        font-size: 16px;
+    }
+
+    .statCount span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .daysMainBlock {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .otherDay {
+        padding: 10px;
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .dayDate {
+        font-size: 12px;
+        opacity: .6;
+    }
+
+    .dayMaxTemp,
+    .nightMinTemp{
+        font-size: 12px;
+    }
+
+    .dayMaxTemp span,
+    .nightMinTemp span{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 390px) and (max-width: 1024px) {
+    .wrapper {
+        width: 100%;
+        height: auto;
+        padding: 30px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainContent {
+        padding: 15px;
+    }
+
+    .formStyle {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .weatherMainContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .statsMainBlock {
+        gap: 10px;
+    }
+
+    .statCount {
+        font-size: 16px;
+    }
+
+    .statCount span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .daysMainBlock {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .otherDay {
+        padding: 10px;
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .dayDate {
+        font-size: 12px;
+        opacity: .6;
+    }
+
+    .dayMaxTemp,
+    .nightMinTemp{
+        font-size: 12px;
+    }
+
+    .dayMaxTemp span,
+    .nightMinTemp span{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .wrapper {
+        width: 100%;
+        height: auto;
+        padding: 30px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainContent {
+        padding: 15px;
+    }
+
+    .formStyle {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .weatherMainContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .statsMainBlock {
+        gap: 10px;
+    }
+
+    .statCount {
+        font-size: 16px;
+    }
+
+    .statCount span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .daysMainBlock {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .otherDay {
+        padding: 10px;
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .dayDate {
+        font-size: 12px;
+        opacity: .6;
+    }
+
+    .dayMaxTemp,
+    .nightMinTemp{
+        font-size: 12px;
+    }
+
+    .dayMaxTemp span,
+    .nightMinTemp span{
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainContent {
+        padding: 15px;
+    }
+
+    .formStyle {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    /* .weatherMainContainer {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+    } */
+
+    .statsMainBlock {
+        gap:20px;
+    }
+
+    .statCount {
+        font-size: 16px;
+    }
+
+    .statCount span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .daysMainBlock {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .otherDay {
+        padding: 10px;
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .dayDate {
+        font-size: 12px;
+        opacity: .6;
+    }
+
+    .dayMaxTemp,
+    .nightMinTemp{
+        font-size: 12px;
+    }
+
+    .dayMaxTemp span,
+    .nightMinTemp span{
+        font-size: 16px;
+    }
 }
